@@ -1,24 +1,35 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
+import Image from "next/image";
 
 const categories = [
-    { label: "ยาง" },
-    { label: "เบรก" },
-    { label: "แบตเตอรี่" },
-    { label: "โช๊คอัพ" },
-    { label: "น้ำมันเครื่องและไส้กรอง" },
-    { label: "การรับประกันสินค้า" },
+    { label: "ยาง", image: "/images/categories/SOne_index_bt-tire.jpg", hoverImage: "/images/categories/SOne_index_bt-tire1.jpg" },
+    { label: "เบรก", image: "/images/categories/SOne_index_bt-break.jpg", hoverImage: "/images/categories/SOne_index_bt-break1.jpg" },
+    { label: "แบตเตอรี่", image: "/images/categories/SOne_index_bt-battery.jpg", hoverImage: "/images/categories/SOne_index_bt-battery1.jpg" },
+    { label: "โช๊คอัพ", image: "/images/categories/SOne_index_bt-chokeup.jpg", hoverImage: "/images/categories/SOne_index_bt-chokeup1.jpg" },
+    { label: "น้ำมันเครื่องและไส้กรอง", image: "/images/categories/SOne_index_bt-oil.jpg", hoverImage: "/images/categories/SOne_index_bt-oil1.jpg" },
+    { label: "การรับประกันสินค้า", image: "/images/categories/SOne_index_bt-guarantee.jpg", hoverImage: "/images/categories/SOne_index_bt-guarantee1.jpg" },
 ];
 
 const CategoryList = () => {
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
     return (
-        <div className="flex justify-around gap-4 border border-gray-300">
+        <div className="flex justify-center gap-2.5">
             {categories.map((category, index) => (
                 <div
                     key={index}
-                    className="flex flex-col items-center justify-center w-32 h-12 bg-orange-500 text-yellow-200 font-bold text-center p-4 shadow-md"
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
                 >
-                    <span className="text-3xl">{category.icon}</span>
-                    <span className="text-sm mt-1">{category.label}</span>
+                    <Image
+                        src={hoveredIndex === index ? category.hoverImage : category.image}
+                        alt={category.label}
+                        width={150}
+                        height={50}
+                        className="object-cover hover:scale-110 transition"
+                    />
                 </div>
             ))}
         </div>
