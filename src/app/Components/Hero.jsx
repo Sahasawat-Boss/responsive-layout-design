@@ -28,7 +28,7 @@ export default function Main() {
 
             {/* Main Image Full-Size */}
             <div className="relative w-full flex items-center justify-center bg-black animate-fade-in">
-                <div className="relative w-full h-[200px] md:h-[250px] xl:h-[350px] overflow-hidden ">
+                <div className="relative w-full h-[220px] md:h-[270px] xl:h-[350px] overflow-hidden ">
                     <Image
                         src={images[currentIndex]}
                         alt="Main Image"

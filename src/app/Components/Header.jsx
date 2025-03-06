@@ -8,17 +8,17 @@ const Header = () => {
     const [hoveredLang, setHoveredLang] = useState("thai");
 
     return (
-        <header className="p-3 w-full text-lg ">
-            <div className="flex flex-col sm:flex-row justify-between items-center">
-                {/* Logo */}
-                <div className="hover:scale-105 transition duration-300 hover:cursor-pointer animate-fade-in-left">
+        <header className="p-3 w-full text-lg">
+            <div className="flex flex-col md:flex-row justify-between items-center w-full">
+                {/* Logo - Always Left */}
+                <div className="hover:scale-105 transition duration-300 hover:cursor-pointer animate-fade-in-left self-center md:self-start">
                     <Image alt="Logo" src="/logo/SOne_index_logo.png" width={250} height={250} />
-
                 </div>
-                {/* Right Section */}
-                <div className="flex flex-col items-end gap-2 animate-fade-in-right">
+
+                {/* Right Section - Center on Mobile, Right on Larger Screens */}
+                <div className="flex flex-col items-center md:items-end w-full sm:w-auto gap-2 animate-fade-in-right mt-3 sm:mt-0">
                     {/* Language Selection */}
-                    <div className="flex space-x-2 ">
+                    <div className="flex space-x-2">
                         <div className="hover:scale-110 transition duration-300 hover:cursor-pointer">
                             <Image
                                 src={hoveredLang === "thai" ? "/images/header/SOne_index_iconthai.jpg" : "/images/header/SOne_index_iconthai.jpg"}
@@ -42,11 +42,11 @@ const Header = () => {
                     </div>
 
                     {/* Search Bar */}
-                    <div className="relative flex items-center border border-orange-500 ">
+                    <div className="relative flex items-center border border-orange-500 w-full sm:w-auto">
                         <input
                             type="text"
                             placeholder="Search..."
-                            className=" outline-blue-600 px-2"
+                            className="outline-blue-600 px-2 w-full sm:w-auto"
                         />
                         <button className="hover:scale-125 transition">
                             <Image src="/images/header/SOne_index_btsearch.jpg" alt="Search Icon" width={26} height={26} />
@@ -54,7 +54,7 @@ const Header = () => {
                     </div>
 
                     {/* Navigation Links */}
-                    <div className="text-end animate-fade-in-up">
+                    <div className="text-center sm:text-end animate-fade-in-up w-full sm:w-auto">
                         <Link href="/" className="px-2 hover:text-orange-600 hover:underline">About S-ONE</Link> |
                         <Link href="/" className="px-2 hover:text-orange-600 hover:underline">Job Opportunity</Link> |
                         <Link href="/" className="px-2 hover:text-orange-600 hover:underline">Contact Us</Link> |

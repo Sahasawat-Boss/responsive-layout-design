@@ -7,7 +7,7 @@ const Section = () => {
     const [hoveredIndex, setHoveredIndex] = useState(0); // Default bullet 1
 
     const bullets = [
-        "/images/section/SOne_index_bullet1.png", 
+        "/images/section/SOne_index_bullet1.png",
         "/images/section/SOne_index_bullet2.png",
         "/images/section/SOne_index_bullet2.png",
     ];
@@ -77,7 +77,7 @@ const Section = () => {
                     {[1, 2, 3].map((item, index) => (
                         <div key={index} className="border bg-white border-gray-200 shadow-md p-2 group hover:scale-105 transition duration-300 hover:cursor-pointer">
                             <div className="relative">
-                                <Image src="/images/main/SOne_index_banner.jpg" alt="News Image" width={150} height={100} className="w-full" />
+                                <Image src="/images/section/SOne_Mobile_pic.jpg" alt="News Image" width={150} height={100} className="w-full" />
                                 <div className="absolute top-0 left-0 bg-black/75 text-white px-2 py-1 text-xs font-bold">19 NOV 2014</div>
                             </div>
                             <p className="text-sm mt-2 h-20 group-hover:underline">ข่าวใหม่!! ข่าวและกิจกรรมข่าวและกิจกรรมข่าวและกิจกรรม</p>
@@ -89,9 +89,9 @@ const Section = () => {
             {/* Right Panel: Safety Tips */}
             <div>
                 <div className=" text-white p-3 flex justify-center gap-2">
-                    <div className="flex">
+                    <div className="flex lg:flex-col">
                         <div className="bg-black/85 here">
-                            <Image src="/images/section/SOne_index_tips1.png" alt="Safety Tips Icon" width={120} height={120} />
+                            <Image src="/images/section/SOne_index_tips1.png" alt="Safety Tips Icon" width={115} height={115} />
                         </div>
                         <div className="bg-black/85 flex flex-col items-start p-3">
                             <h2 className="text-xl text-orange-500">Safety Tips</h2>
@@ -108,22 +108,23 @@ const Section = () => {
                                 alt="Phone Number"
                                 width={20}
                                 height={20}
-                                className="mt-1 self-end"
+                                className="mt-0.5 self-end"
                             />
                         </div>
                     </div>
 
                 </div>
                 <div className="px-3">
-                    <label className="block text-xs font-bold">สมัครรับข่าวสาร</label>
-                    <div className="flex items-center mt-1 gap-1">
-                        <input type="email" placeholder="กรุณาใส่อีเมล์" className="p-1 text-xs flex-1 border border-gray-300 text-black" />
-                        <button className="bg-black text-white px-3 py-1 text-xs hover:scale-110 transition">GO</button>
+                    <label className="block text-xl">สมัครรับข่าวสาร</label>
+                    <div className="flex flex-col items-start mt-1 gap-1">
+                        <input type="email" placeholder="กรุณาใส่อีเมล์" className="p-1 px-2.5 flex-1 border border-gray-300 text-black" />
+                        <button className="bg-black text-white px-4 py-2 text-xs hover:scale-110 transition hover:cursor-pointer">GO</button>
                     </div>
+                    <p className="text-2xl font-bold flex justify-center py-4 hover:scale-110 transition duration-200 hover:cursor-pointer">
+                        <Image src="/images/section/SOne_index_call.png" alt="Phone Number" width={200} height={40} />
+                    </p>
                 </div>
-                <p className="text-2xl font-bold flex justify-center py-4">
-                    <Image src="/images/section/SOne_index_call.png" alt="Phone Number" width={200} height={40} />
-                </p>
+
 
             </div>
         </section>
