@@ -1,8 +1,9 @@
 import Header from "./Components/Header"
 import Nav from "./Components/Nav"
-import Main from "./Components/Main"
+import Hero from "./Components/Hero"
 import CategoryList from "./Components/Category"
 import Section from "./Components/Section"
+import SectionTest from "./Components/SectionTest"
 import Footer from "./Components/Footer"
 
 
@@ -11,9 +12,10 @@ export default function Home() {
     <div>
       <Header/>
       <Nav/>
-      <Main/>
+      <Hero/>
       <CategoryList/>
       <Section/>
+      <SectionTest/>
       <Footer/>
     </div>
   )

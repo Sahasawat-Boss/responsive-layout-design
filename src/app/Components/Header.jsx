@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <header className="p-3 w-full text-lg">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between items-center">
                 {/* Logo */}
                 <Image alt="Logo" src="/logo/SOne_index_logo.png" width={250} height={250} />
 

@@ -16,19 +16,20 @@ const CategoryList = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
     return (
-        <div className="flex justify-center gap-2.5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 justify-center px-2 xl:max-w-[1500px] xl:mx-auto">
             {categories.map((category, index) => (
                 <div
                     key={index}
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
+                    className="flex justify-center items-center"
                 >
                     <Image
                         src={hoveredIndex === index ? category.hoverImage : category.image}
                         alt={category.label}
                         width={150}
                         height={50}
-                        className="object-cover hover:scale-110 transition"
+                        className="object-cover hover:scale-105 transition w-full h-auto"
                     />
                 </div>
             ))}
