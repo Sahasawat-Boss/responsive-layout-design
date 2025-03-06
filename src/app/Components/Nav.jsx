@@ -59,7 +59,7 @@ export default function Header() {
                 </div>
 
                 {/* Mobile Menu Button */}
-                <div className="absolute top-2 left-2 rounded-md bg-black md:hidden hover:scale-110 transition duration-200">
+                <div className="z-50 border border-gray-100 top-2 right-2 fixed drop-shadow-lg rounded-md bg-black md:hidden hover:scale-110 transition duration-200">
                     <button
                         className="md:hidden p-2"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

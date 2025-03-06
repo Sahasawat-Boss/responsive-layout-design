@@ -12,7 +12,7 @@ const Header = () => {
         <header className="pt-1 px-2 w-full text-lg">
             <div className="flex flex-col md:flex-row justify-between items-center w-full">
                 {/* Logo - Always Left */}
-                <div className="hover:scale-105 transition duration-300 hover:cursor-pointer animate-fade-in-left self-center md:self-start">
+                <div className="hover:scale-105 transition duration-300 hover:cursor-pointer animate-fade-in-left self-start md:self-start">
                     <Image alt="Logo" src="/logo/SOne_index_logo.png" width={250} height={250} />
                 </div>
 

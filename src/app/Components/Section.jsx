@@ -119,7 +119,7 @@ const Section = () => {
                     <div className="flex md:flex-col">
                         <div className="flex">
                             <Image src="/images/section/SOne_index_tips1.png" alt="Safety Tips Icon" width={120} height={80} />
-                            <div className="bg-black/85 flex flex-col items-start px-3 h-[101.5px] border-b border-orange-400">
+                            <div className="bg-black/85 flex flex-col items-start px-3 mb-[6px] border-b border-orange-400">
                                 <h2 className="text-xl text-orange-500 self-center">Safety Tips</h2>
                                 <Image
                                     src="/images/section/SOne_index_pic66.png"
@@ -143,7 +143,7 @@ const Section = () => {
                 </div>
                 <div className="px-3 mt-2.5">
                     <label className="text-lg pt-1">สมัครรับข่าวสาร</label>
-                    <div className="flex items-start mt-1 gap-1">
+                    <div className="flex items-start mt-1">
                         <input type="email" placeholder="กรุณาใส่อีเมล์" className="p-1 px-2.5 flex-1 border border-gray-300 text-black" />
                         <button className="bg-black text-white px-4 py-2 text-xs hover:scale-110 transition hover:cursor-pointer">GO</button>
                     </div>
