@@ -6,8 +6,8 @@ import TireSearch from "./TireSearch";
 
 const images = [
     "/images/main/SOne_index_banner.jpg",
-    "/images/main/banner_promotion_01.jpg",
-    "/images/main/banner_promotion_02.jpg",
+    "/images/main/SOne_index_banner.jpg",
+    "/images/main/SOne_index_banner.jpg",
 ];
 
 export default function Main() {

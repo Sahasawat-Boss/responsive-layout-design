@@ -8,6 +8,7 @@ export default function Header() {
     const [activeItem, setActiveItem] = useState(0); // Default active is "Product & Services"
     const [hoveredSocial, setHoveredSocial] = useState(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // State to toggle mobile menu
+    const [menuButtonHovered, setMenuButtonHovered] = useState(false); // Track hover state for mobile menu button
 
     const menuItems = [
         { href: "/", label: "Product & Services" },
@@ -19,8 +20,8 @@ export default function Header() {
     ];
 
     return (
-        <header className="bg-black text-white py-2 shadow-md w-full">
-            <div className="flex justify-between items-center px-4 lg:px-8">
+        <header className="bg:white md:bg-black text-white py-2 w-full">
+            <div className="flex justify-between items-center md:px-4 lg:px-8">
 
                 {/* Desktop Navigation */}
                 <nav className="hidden md:flex flex-wrap space-x-3 animate-fade-in-right">
@@ -58,19 +59,25 @@ export default function Header() {
                 </div>
 
                 {/* Mobile Menu Button */}
-                <div className="flex">
+                <div className="absolute top-2 left-2 rounded-md bg-black md:hidden hover:scale-110 transition duration-200">
                     <button
-                        className="md:hidden p-2 border border-white rounded-md hover:scale-110 transition duration-200"
+                        className="md:hidden p-2"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        onMouseEnter={() => setMenuButtonHovered(true)}
+                        onMouseLeave={() => setMenuButtonHovered(false)}
                     >
-                        <Image src="/images/nav/SOne_Mobile_menu.png" alt="Menu" width={30} height={30} />
+                        <Image
+                            src={menuButtonHovered || mobileMenuOpen ? "/images/nav/SOne_Mobile_menuho.png" : "/images/nav/SOne_Mobile_menu.png"}
+                            alt="Menu"
+                            width={30}
+                            height={30}
+                        />
                     </button>
-                    <div className="pl-4 mt-2 md:hidden ">Open Menu</div>
                 </div>
             </div>
 
             {/* Mobile Menu (Sliding Drawer) */}
-            <div className={`lg:hidden fixed top-0 right-0 h-full w-64 bg-black p-5 transition-transform ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"} z-50`}>
+            <div className={`lg:hidden fixed top-0 right-0 h-full w-72 bg-black p-5 transition-transform ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"} z-50`}>
                 <nav className="flex flex-col mt-10 space-y-4">
                     {menuItems.map((item, index) => (
                         <Link
@@ -89,7 +96,7 @@ export default function Header() {
                 </nav>
 
                 {/* Mobile Social Links */}
-                <div className="flex space-x-4 mt-6">
+                <div className="flex space-x-4 mt-6 ml-6">
                     <Link
                         href="#"
                         onMouseEnter={() => setHoveredSocial("facebook")}

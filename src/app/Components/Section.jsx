@@ -58,7 +58,7 @@ const Section = () => {
                     <h2 className="text-xl">News & Events</h2>
 
                     {/* Right: Bullet Icons */}
-                    <div className="flex space-x-1">
+                    <div className="flex space-x-1.5">
                         {bullets.map((bullet, index) => (
                             <Image
                                 key={index}
@@ -73,55 +73,82 @@ const Section = () => {
                         ))}
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 px-2">
-                    {[1, 2, 3].map((item, index) => (
-                        <div key={index} className="border bg-white border-gray-200 shadow-md p-2 group hover:scale-105 transition duration-300 hover:cursor-pointer">
-                            <div className="relative">
-                                <Image src="/images/section/SOne_Mobile_pic.jpg" alt="News Image" width={150} height={100} className="w-full" />
-                                <div className="absolute top-0 left-0 bg-black/75 text-white px-2 py-1 text-xs font-bold">19 NOV 2014</div>
+                <div className="grid grid-cols-1 md:grid-cols-3 mt-4 px-2 pb-2 border-b border-orange-300">
+
+                    <div className="bg-white border-r border-orange-300  p-2 group hover:scale-105 transition duration-300 hover:cursor-pointer">
+                        <div className="relative">
+                            <Image src="/images/section/SOne_Mobile_pic.jpg" alt="News Image" width={150} height={100} className="w-full" />
+                            <div className="absolute top-0 left-0 flex flex-col items-center justify-center bg-black/75 text-white px-2 py-1 text-xs">
+                                <div>19</div>
+                                <div>Nov</div>
+                                <div>2024</div>
                             </div>
-                            <p className="text-sm mt-2 h-20 group-hover:underline">ข่าวใหม่!! ข่าวและกิจกรรมข่าวและกิจกรรมข่าวและกิจกรรม</p>
                         </div>
-                    ))}
+                        <p className="text-sm mt-2 h-20 group-hover:underline">ข่าวใหม่!! ข่าวและกิจกรรมข่าวและกิจกรรมข่าวและกิจกรรม</p>
+                    </div>
+                    <div className="bg-white border-r border-orange-300  p-2 group hover:scale-105 transition duration-300 hover:cursor-pointer">
+                        <div className="relative">
+                            <Image src="/images/section/SOne_Mobile_pic.jpg" alt="News Image" width={150} height={100} className="w-full" />
+                            <div className="absolute top-0 left-0 flex flex-col items-center justify-center bg-black/75 text-white px-2 py-1 text-xs">
+                                <div>19</div>
+                                <div>Nov</div>
+                                <div>2024</div>
+                            </div>
+                        </div>
+                        <p className="text-sm mt-2 h-20 group-hover:underline">ข่าวใหม่!! ข่าวและกิจกรรมข่าวและกิจกรรมข่าวและกิจกรรม</p>
+                    </div>
+                    <div className="bg-white  p-2 group hover:scale-105 transition duration-300 hover:cursor-pointer">
+                        <div className="relative">
+                            <Image src="/images/section/SOne_Mobile_pic.jpg" alt="News Image" width={150} height={100} className="w-full" />
+                            <div className="absolute top-0 left-0 flex flex-col items-center justify-center bg-black/75 text-white px-2 py-1 text-xs">
+                                <div>19</div>
+                                <div>Nov</div>
+                                <div>2024</div>
+                            </div>
+                        </div>
+                        <p className="text-sm mt-2 h-20 group-hover:underline">ข่าวใหม่!! ข่าวและกิจกรรมข่าวและกิจกรรมข่าวและกิจกรรม</p>
+                    </div>
+
+
                 </div>
             </div>
 
             {/* Right Panel: Safety Tips */}
-            <div>
-                <div className=" text-white p-3 flex justify-center gap-2">
-                    <div className="flex lg:flex-col">
-                        <div className="bg-black/85 here">
-                            <Image src="/images/section/SOne_index_tips1.png" alt="Safety Tips Icon" width={115} height={115} />
-                        </div>
-                        <div className="bg-black/85 flex flex-col items-start p-3">
-                            <h2 className="text-xl text-orange-500">Safety Tips</h2>
-                            <Image
-                                src="/images/section/SOne_index_pic66.png"
-                                alt="Phone Number"
-                                width={20}
-                                height={20}
-                                className="mt-1 self-start"
-                            />
-                            <p className="mt-1 text-xs leading-tight">ควรเติมน้ำมันตอนเช้าขณะที่อุณหภูมิบนพื้นดินยังเย็นอยู่</p>
-                            <Image
-                                src="/images/section/SOne_index_pic99.png"
-                                alt="Phone Number"
-                                width={20}
-                                height={20}
-                                className="mt-0.5 self-end"
-                            />
+            <div className="overflow-auto">
+                <div className=" text-white flex justify-center">
+                    <div className="flex md:flex-col">
+                        <div className="flex">
+                            <Image src="/images/section/SOne_index_tips1.png" alt="Safety Tips Icon" width={120} height={80} />
+                            <div className="bg-black/85 flex flex-col items-start px-3 h-[101.5px] border-b border-orange-400">
+                                <h2 className="text-xl text-orange-500 self-center">Safety Tips</h2>
+                                <Image
+                                    src="/images/section/SOne_index_pic66.png"
+                                    alt="Phone Number"
+                                    width={10}
+                                    height={10}
+                                    className="mt-1 self-start"
+                                />
+                                <p className="mt-0.5 text-xs leading-tight">ควรเติมน้ำมันตอนเช้าขณะที่อุณหภูมิบนพื้นดินยังเย็นอยู่</p>
+                                <Image
+                                    src="/images/section/SOne_index_pic99.png"
+                                    alt="Phone Number"
+                                    width={10}
+                                    height={10}
+                                    className="mt-0.5 self-end"
+                                />
+                            </div>
                         </div>
                     </div>
 
                 </div>
-                <div className="px-3">
-                    <label className="block text-xl">สมัครรับข่าวสาร</label>
-                    <div className="flex flex-col items-start mt-1 gap-1">
+                <div className="px-3 mt-2.5">
+                    <label className="text-lg pt-1">สมัครรับข่าวสาร</label>
+                    <div className="flex items-start mt-1 gap-1">
                         <input type="email" placeholder="กรุณาใส่อีเมล์" className="p-1 px-2.5 flex-1 border border-gray-300 text-black" />
                         <button className="bg-black text-white px-4 py-2 text-xs hover:scale-110 transition hover:cursor-pointer">GO</button>
                     </div>
-                    <p className="text-2xl font-bold flex justify-center py-4 hover:scale-110 transition duration-200 hover:cursor-pointer">
-                        <Image src="/images/section/SOne_index_call.png" alt="Phone Number" width={200} height={40} />
+                    <p className="text-2xl font-bold flex justify-center pt-5 py-3 hover:cursor-pointer">
+                        <Image src="/images/section/SOne_index_call.png" alt="Phone Number" width={300} height={40} />
                     </p>
                 </div>
 

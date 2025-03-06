@@ -9,7 +9,7 @@ const Header = () => {
     const [activeLink, setActiveLink] = useState(null);
 
     return (
-        <header className="p-3 w-full text-lg">
+        <header className="pt-1 px-2 w-full text-lg">
             <div className="flex flex-col md:flex-row justify-between items-center w-full">
                 {/* Logo - Always Left */}
                 <div className="hover:scale-105 transition duration-300 hover:cursor-pointer animate-fade-in-left self-center md:self-start">
