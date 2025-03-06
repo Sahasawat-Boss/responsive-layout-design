@@ -14,7 +14,7 @@ const SafetyTips = () => {
     };
 
     return (
-        <div className="bg-white p-4 shadow-md">
+        <div className="bg-white p-4">
             {/* Safety Tips Section */}
             <div className="flex items-center space-x-3">
                 <img src="/images/SOne_index_tips1.png" alt="Mechanic" className="w-35 h-35" />

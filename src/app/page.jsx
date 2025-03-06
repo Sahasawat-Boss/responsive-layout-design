@@ -3,6 +3,7 @@ import Nav from "./Components/Nav"
 import Main from "./Components/Main"
 import CategoryList from "./Components/Category"
 import Section from "./Components/Section"
+import Footer from "./Components/Footer"
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Main/>
       <CategoryList/>
       <Section/>
+      <Footer/>
     </div>
   )
 }

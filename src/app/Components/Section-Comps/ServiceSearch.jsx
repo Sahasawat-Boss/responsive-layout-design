@@ -16,7 +16,7 @@ const ServiceSearch = () => {
     };
 
     return (
-        <div className=" bg-black text-white shadow-md">
+        <div className=" bg-black text-white">
             {/* Header */}
             <h2 className="bg-orange-500 text-white text-center text-lg font-bold py-2">
                 ค้นหาศูนย์บริการใกล้บ้านคุณ

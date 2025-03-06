@@ -23,16 +23,16 @@ const newsData = [
 
 const NewsEvents = () => {
     return (
-        <div className="bg-white border-1 border-orange-400 p-4 shadow-md">
+        <div className="bg-white border-1 border-orange-400">
             {/* Header */}
-            <h2 className="text-lg font-bold border-b-2 border-black pb-2">News & Events</h2>
+            <h2 className="text-lg font-semibold border-b-1 border-orange-400">News & Events</h2>
 
             {/* News Grid */}
-            <div className="relative grid grid-cols-1  lg:grid-cols-3 gap-4 mt-4">
+            <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-4 p-2 h-40">
                 {newsData.map((news) => (
-                    <div key={news.id} className="shadow-md ">
+                    <div key={news.id} className="shadow-md">
                         {/* News Image */}
-                        <div className="relative">
+                        <div className="relative h-20">
                             <Image
                                 src={news.image}
                                 alt={news.title}
