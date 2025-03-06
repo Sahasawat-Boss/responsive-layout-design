@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -14,6 +14,7 @@ const categories = [
 
 const CategoryList = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
+    const [clickedIndex, setClickedIndex] = useState(null); // Track clicked item
 
     return (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 justify-center px-2 xl:max-w-[1500px] xl:mx-auto animate-fade-in-up">
@@ -22,14 +23,15 @@ const CategoryList = () => {
                     key={index}
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
-                    className="flex justify-center items-center"
+                    onClick={() => setClickedIndex(index)} // Set clicked index on click
+                    className="flex justify-center items-center cursor-pointer"
                 >
                     <Image
-                        src={hoveredIndex === index ? category.hoverImage : category.image}
+                        src={clickedIndex === index || hoveredIndex === index ? category.hoverImage : category.image}
                         alt={category.label}
                         width={150}
                         height={50}
-                        className="object-cover hover:scale-105 transition duration-300 hover:cursor-pointer w-full h-auto"
+                        className="object-cover hover:scale-105 transition duration-300 w-full h-auto"
                     />
                 </div>
             ))}

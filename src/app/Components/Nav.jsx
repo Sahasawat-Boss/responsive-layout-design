@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
-    const [hoveredItem, setHoveredItem] = useState(0); // Default active is "Product & Services"
+    const [activeItem, setActiveItem] = useState(0); // Default active is "Product & Services"
     const [hoveredSocial, setHoveredSocial] = useState(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // State to toggle mobile menu
 
@@ -28,12 +28,12 @@ export default function Header() {
                         <Link
                             key={index}
                             href={item.href}
-                            className={`flex items-center px-3 py-2 bg-black ${hoveredItem === index ? "text-orange-500" : "text-white"} hover:text-orange-500`}
-                            onMouseEnter={() => setHoveredItem(index)}
-                            onMouseLeave={() => setHoveredItem(0)} // Reset to default (Product & Services)
+                            className={`flex items-center px-3 py-2 bg-black ${activeItem === index ? "text-orange-500" : "text-white"
+                                } hover:text-orange-500`}
+                            onClick={() => setActiveItem(index)} // Set active item on click
                         >
                             <Image
-                                src={hoveredItem === index ? "/images/nav/SOne_index_menu02.png" : "/images/nav/SOne_index_menu01.png"}
+                                src={activeItem === index ? "/images/nav/SOne_index_menu02.png" : "/images/nav/SOne_index_menu01.png"}
                                 alt="icon"
                                 width={20}
                                 height={20}
@@ -65,9 +65,7 @@ export default function Header() {
                     >
                         <Image src="/images/nav/SOne_Mobile_menu.png" alt="Menu" width={30} height={30} />
                     </button>
-                    <div className="pl-4 mt-2 md:hidden ">
-                        Open Menu
-                    </div>
+                    <div className="pl-4 mt-2 md:hidden ">Open Menu</div>
                 </div>
             </div>
 
@@ -75,7 +73,16 @@ export default function Header() {
             <div className={`lg:hidden fixed top-0 right-0 h-full w-64 bg-black p-5 transition-transform ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"} z-50`}>
                 <nav className="flex flex-col mt-10 space-y-4">
                     {menuItems.map((item, index) => (
-                        <Link key={index} href={item.href} className="text-white text-lg hover:text-orange-500 ml-2 hover:bg-gray-600" onClick={() => setMobileMenuOpen(false)}>
+                        <Link
+                            key={index}
+                            href={item.href}
+                            className={`text-lg ml-2 px-3 py-2 rounded-md ${activeItem === index ? "text-orange-500 bg-gray-700" : "text-white"
+                                } hover:text-orange-500 hover:bg-gray-600`}
+                            onClick={() => {
+                                setActiveItem(index); // Set active item
+                                setMobileMenuOpen(false); // Close menu
+                            }}
+                        >
                             {item.label}
                         </Link>
                     ))}
@@ -120,7 +127,6 @@ export default function Header() {
                         />
                     </Link>
                 </div>
-
             </div>
 
             {/* Overlay when mobile menu is open */}

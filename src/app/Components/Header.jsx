@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const Header = () => {
     const [hoveredLang, setHoveredLang] = useState("thai");
+    const [activeLink, setActiveLink] = useState(null);
 
     return (
         <header className="p-3 w-full text-lg">
@@ -49,16 +50,28 @@ const Header = () => {
                             className="outline-blue-600 px-2 w-full sm:w-auto"
                         />
                         <button className="hover:scale-125 transition">
-                            <Image src="/images/header/SOne_index_btsearch.jpg" alt="Search Icon" width={26} height={26} />
+                            <Image src="/images/header/SOne_index_btsearch.jpg" alt="Search Icon" width={28} height={28} />
                         </button>
                     </div>
 
                     {/* Navigation Links */}
                     <div className="text-center sm:text-end animate-fade-in-up w-full sm:w-auto">
-                        <Link href="/" className="px-2 hover:text-orange-600 hover:underline">About S-ONE</Link> |
-                        <Link href="/" className="px-2 hover:text-orange-600 hover:underline">Job Opportunity</Link> |
-                        <Link href="/" className="px-2 hover:text-orange-600 hover:underline">Contact Us</Link> |
-                        <Link href="/" className="px-2 hover:text-orange-600 hover:underline">Site Map</Link>
+                        {[
+                            { name: "About S-ONE |", href: "/" },
+                            { name: "Job Opportunity |", href: "/" },
+                            { name: "Contact Us |", href: "/" },
+                            { name: "Site Map", href: "/" },
+                        ].map((link, index) => (
+                            <Link
+                                key={index}
+                                href={link.href}
+                                className={`px-2 hover:text-orange-600 hover:underline ${activeLink === index ? "text-orange-600" : ""
+                                    }`}
+                                onClick={() => setActiveLink(index)}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>
