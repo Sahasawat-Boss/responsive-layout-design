@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const TireSearch = () => {
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center animate-fade-in-up">
             {/* Search Tire Header */}
-            <div className="w-[400px] bg-orange-500 p-2">
-                <h2 className="text-xl font-bold">ค้นหายาง</h2>
+            <div className="w-[400px] bg-orange-500 p-1">
+                <h2 className="text-2xl">ค้นหายาง</h2>
             </div>
 
             {/* Search Form with Background Image */}
@@ -24,7 +24,7 @@ const TireSearch = () => {
                         <div className="pt-2">
                             <label className="block text-2xl">หน้ายาง</label>
                             <label className="block">หน้ากว้าง (มม.)</label>
-                            <select className="w-full py-1.5 bg-white text-black">
+                            <select className="w-full py-1.5 bg-white text-black border border-orange-500">
                                 <option>--เลือกหน้ากว้าง--</option>
                             </select>
                         </div>
@@ -32,7 +32,7 @@ const TireSearch = () => {
                         <div className="pt-2">
                             <label className="block text-2xl">ซีรีย์</label>
                             <label className="block">อัตราส่วนความสูงแก้มยาง (%)</label>
-                            <select className="w-full py-1.5 bg-white text-black">
+                            <select className="w-full py-1.5 bg-white text-black border border-orange-500">
                                 <option>--เลือกซีรีย์--</option>
                             </select>
                         </div>
@@ -40,12 +40,12 @@ const TireSearch = () => {
                         <div className="pt-2">
                             <label className="block text-2xl">กระทะล้อ</label>
                             <label className="block">เส้นผ่าศูนย์กลาง (นิ้ว)</label>
-                            <select className="w-full py-1.5 bg-white text-black">
+                            <select className="w-full py-1.5 bg-white text-black border border-orange-500">
                                 <option>--เลือกกระทะล้อ--</option>
                             </select>
                         </div>
 
-                        <button className="w-full flex justify-center pt-4">
+                        <button className="w-full flex justify-center pt-4 hover:scale-110 transition hover:cursor-pointer">
                             <Image
                                 src="/images/main/SOne_index_search.png"
                                 alt="ค้นหา"

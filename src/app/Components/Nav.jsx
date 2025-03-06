@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function Header() {
-    const [hoveredItem, setHoveredItem] = useState(0); // Default hover on first item
+    const [hoveredItem, setHoveredItem] = useState(0); // Default active is "Product & Services"
     const [hoveredSocial, setHoveredSocial] = useState(null);
 
     const menuItems = [
-        { href: "/", label: "Product & Services", default: true },
+        { href: "/", label: "Product & Services" },
         { href: "/", label: "Promotions" },
         { href: "/", label: "News & Events" },
         { href: "/", label: "Safety Tips" },
@@ -19,15 +19,17 @@ export default function Header() {
 
     return (
         <header className="bg-black text-white py-2 shadow-md w-full">
-            <div className="flex flex-col md:flex-row justify-between items-center px-4">
-                <nav className="flex flex-wrap justify-center md:justify-start space-x-3">
+            <div className="flex flex-col lg:flex-row justify-between items-center px-4">
+                {/* Navigation Menu */}
+                <nav className="flex flex-wrap justify-center md:justify-start space-x-3 animate-fade-in-right">
                     {menuItems.map((item, index) => (
                         <Link
                             key={index}
                             href={item.href}
-                            className={`flex items-center px-3 py-2 bg-black ${item.default ? 'text-orange-500' : 'text-white'} hover:text-orange-500`}
+                            className={`flex items-center px-3 py-2 bg-black ${hoveredItem === index ? "text-orange-500" : "text-white"
+                                } hover:text-orange-500`}
                             onMouseEnter={() => setHoveredItem(index)}
-                            onMouseLeave={() => setHoveredItem(0)} // Reset hover back to first item
+                            onMouseLeave={() => setHoveredItem(0)} // Reset to default (Product & Services)
                         >
                             <Image
                                 src={hoveredItem === index ? "/images/nav/SOne_index_menu02.png" : "/images/nav/SOne_index_menu01.png"}
@@ -42,7 +44,7 @@ export default function Header() {
                 </nav>
 
                 {/* Social Links with Hover Effect */}
-                <div className="flex space-x-3 my-3 md:mt-0">
+                <div className="flex space-x-3 mt-3 md:mt-0 animate-fade-in-left">
                     <Link href="#" onMouseEnter={() => setHoveredSocial("facebook")} onMouseLeave={() => setHoveredSocial(null)}>
                         <Image src={hoveredSocial === "facebook" ? "/images/nav/SOne_index_btfacebook1.png" : "/images/nav/SOne_index_btfacebook.png"} alt="Facebook" width={25} height={25} />
                     </Link>
